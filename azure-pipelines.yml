@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
 pool:
-  vmImage: 'macOS-10.13'
+  vmImage: 'macos-latest'
 
 steps:
 - task: Gradle@2
@@ -17,8 +17,8 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug test'
-  displayName: gradlew assembleDebug test
+    tasks: 'assembleDebug'
+  displayName: gradlew assembleDebug
 
 - task: CopyFiles@2
   inputs:
